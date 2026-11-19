@@ -18,5 +18,5 @@ print('numpy', numpy.__version__, '| scipy', scipy.__version__, '| opencv', cv2.
 ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf', 40, layout_engine=ImageFont.Layout.RAQM); print('FreeSerif Bold OK')
 PY
 ffmpeg -version | head -1
-echo "optional (only to generate the voice): pip install google-genai ; export GEMINI_API_KEY=AQ.Ab8RN6L0URolIX3rGgSjSBzHverdJMF1xOkbRIOqbMyRBhtFrQ"
+echo "optional (only to generate the voice): pip install google-genai ; export GEMINI_API_KEY=..."
 echo "setup ok"
