@@ -18,5 +18,14 @@ print('numpy', numpy.__version__, '| scipy', scipy.__version__, '| opencv', cv2.
 ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf', 40, layout_engine=ImageFont.Layout.RAQM); print('FreeSerif Bold OK')
 PY
 ffmpeg -version | head -1
-echo "optional (only to generate the voice): pip install google-genai ; export GEMINI_API_KEY=..."
+
+# Check for GEMINI_API_KEY from GitHub Codespaces Secrets
+if [ -n "$GEMINI_API_KEY" ]; then
+  echo "GEMINI_API_KEY detected in environment."
+  python3 -c "import google.genai" 2>/dev/null || pip install --break-system-packages google-genai
+else
+  echo "WARNING: GEMINI_API_KEY not found. Add it to GitHub Codespaces Secrets and reload your Codespace."
+fi
+
 echo "setup ok"
+
