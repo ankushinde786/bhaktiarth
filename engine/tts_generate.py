@@ -25,6 +25,7 @@ def save_binary_file(file_name, data):
 def generate():
     client = genai.Client(
         api_key=os.environ.get("GEMINI_API_KEY"),
+        http_options={"api_version": "v1beta"},
     )
 
     model = "gemini-3.8-flash-tts"
